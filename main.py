@@ -71,13 +71,13 @@ for TikId in TikIds:
             UikId = Uik.get('id')
             if UikId is not None:
                 UikIds.append(UikId)
-        '''
-        find_id = soup_tree.find_all('li', {'class':['jstree-node  jstree-leaf jstree-last','jstree-node jstree-leaf']})
+        
+        find_id = soup_tree.find_all('li', class_='jstree-node jstree-leaf jstree-last')
         for Uik in find_id:
             UikId = Uik.get('id')
             if UikId is not None:
                 UikIds.append(UikId)
-        '''
+        
         if len(UikIds) != 0:
             for UikId in UikIds:
                 response = requests.get(URL+UikId)
